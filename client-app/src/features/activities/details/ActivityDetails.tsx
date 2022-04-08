@@ -9,7 +9,8 @@ import ActivityDetailedHeader from "./ActivityDetailedHeader";
 import ActivityDetailedInfo from "./ActivityDetailedInfo";
 import ActivityDetailedSidebar from "./ActivityDetailedSidebar";
 
-export default observer(function ActivityDetails () {
+
+export default observer(function ActivityDetails() {
     const {activityStore} = useStore();
     const {selectedActivity: activity, loadActivity, loadingInitial} = activityStore;
     const {id} = useParams<{id: string}>();
@@ -23,14 +24,13 @@ export default observer(function ActivityDetails () {
     return (
         <Grid>
             <Grid.Column width={10}>
-                <ActivityDetailedHeader activity={activity}/>
-                <ActivityDetailedInfo activity={activity}/>
+                <ActivityDetailedHeader activity={activity} />
+                <ActivityDetailedInfo activity={activity} />
                 <ActivityDetailedChat />
             </Grid.Column>
             <Grid.Column width={6}>
-                <ActivityDetailedSidebar />
+                <ActivityDetailedSidebar activity={activity} />
             </Grid.Column>
         </Grid>
-
     )
 })

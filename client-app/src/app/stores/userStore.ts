@@ -14,7 +14,7 @@ export default class UserStore {
     get isLoggedIn() {
         return !!this.user;
     }
-    
+
     login = async (creds: UserFormValues) => {
         try {
             const user = await agent.Account.login(creds);
@@ -54,4 +54,8 @@ export default class UserStore {
             throw error;
         }
     }
+
+    setImage = (image: string) => {
+        if (this.user) this.user.image = image;
+    } 
 }
