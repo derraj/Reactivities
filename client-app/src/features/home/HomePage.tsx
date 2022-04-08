@@ -24,6 +24,8 @@ export default observer(function HomePage() {
 
                 ) : (
                         <>
+                        <h5>Login with <br/>email: bob@test.com <br/>pass: Pa$$w0rd</h5>
+                        
                         <Button onClick={() => modalStore.openModal(<LoginForm />)} size='huge' inverted>
                                 Login!
                         </Button>

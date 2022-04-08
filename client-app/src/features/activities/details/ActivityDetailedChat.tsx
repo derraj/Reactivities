@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { Segment, Header, Comment, Loader } from 'semantic-ui-react'
 import { useStore } from '../../../app/stores/store';
 import * as Yup from 'yup';
-import { formatDistanceToNow } from 'date-fns'
+import { formatDistance } from 'date-fns'
 
 interface Props {
     activityId: string;
@@ -50,7 +50,7 @@ export default observer(function ActivityDetailedChat({ activityId }: Props) {
                                     <div style={{ position: 'relative' }}>
                                         <Loader active={isSubmitting} />
                                         <textarea
-                                            placeholder='Enter your comment (Enter to submit, SHIFT + enter for new line)'
+                                            placeholder='Enter your comment here (Enter to submit, SHIFT + enter for new line)'
                                             rows={2}
                                             {...props.field}
                                             onKeyPress={e => {
@@ -78,7 +78,7 @@ export default observer(function ActivityDetailedChat({ activityId }: Props) {
                                     {comment.displayName}
                                 </Comment.Author>
                                 <Comment.Metadata>
-                                    <div>{formatDistanceToNow(comment.createdAt)} ago</div>
+                                    <div>{formatDistance(new Date(comment.createdAt), new Date())}</div>
                                 </Comment.Metadata>
                                 <Comment.Text style={{ whiteSpace: 'pre-wrap' }}>{comment.body}</Comment.Text>
                             </Comment.Content>
