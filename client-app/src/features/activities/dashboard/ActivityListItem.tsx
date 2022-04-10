@@ -19,7 +19,7 @@ export default function ActivityListItem({ activity }: Props) {
                 }
                 <Item.Group>
                     <Item>
-                        <Item.Image style={{marginBottom: 3}} size='tiny' circular src={activity.host?.image || '/assets/user.png'} />
+                        <Item.Image style={{marginBottom: 5}} size='tiny' circular src={activity.host?.image || '/assets/user.png'} />
                         <Item.Content>
                             <Item.Header as={Link} to={`/activities/${activity.id}`}>
                                 {activity.title}
@@ -44,10 +44,10 @@ export default function ActivityListItem({ activity }: Props) {
                     </Item>
                 </Item.Group>
             </Segment>
-            <Segment>
+            <Segment  style={{border: 0}}>
                 <span>
                     <Icon name='clock' /> {format(activity.date!, 'dd MMM yyyy h:mm aa')}
-                    <Icon name='marker' /> {activity.venue}
+                    <Icon name='marker'  style={{marginLeft: 20}} /> {activity.venue}
                 </span>
             </Segment>
             <Segment secondary>

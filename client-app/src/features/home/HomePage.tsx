@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import { Link } from 'react-router-dom';
-import { Container, Header, Segment, Image, Button } from 'semantic-ui-react';
+import { Container, Header, Segment, Image, Button, Icon } from 'semantic-ui-react';
 import { useStore } from '../../app/stores/store';
 import LoginForm from '../users/LoginForm';
 import RegisterForm from '../users/RegisterForm';
@@ -16,7 +16,6 @@ export default observer(function HomePage() {
                 </Header>
                 {userStore.isLoggedIn ? (
                     <>
-                        <Header as='h2' inverted content='Welcome to Reactivities' />
                         <Button as={Link} to='/activities' size='huge' inverted>
                             Go to Activities!
                         </Button>
@@ -24,7 +23,7 @@ export default observer(function HomePage() {
 
                 ) : (
                         <>
-                        <h5>Login with <br/>email: bob@test.com <br/>pass: Pa$$w0rd</h5>
+                        <Header as='h5' inverted>Login with <br/>email: bob@test.com <br/>pass: Pa$$w0rd</Header>
                         
                         <Button onClick={() => modalStore.openModal(<LoginForm />)} size='huge' inverted>
                                 Login!
@@ -34,7 +33,16 @@ export default observer(function HomePage() {
                         </Button>
                         </>
 
-                    )}
+                )}
+                <Header as='h3'>
+                    <Icon.Group 
+                        href='https://github.com/derraj/Reactivities'
+                        inverted
+                    >
+                        <Icon name='github' inverted size='large' link/>
+                    </Icon.Group>
+                </Header>
+            
             </Container>
         </Segment>
     )
