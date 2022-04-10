@@ -25,7 +25,7 @@ Reactivities is a social media application where users can create and share even
 
 
 ## Technologies used
-- ASP.NET Core
+- .Net 5/6
 - Axios
 - Cloudinary
 - Docker
