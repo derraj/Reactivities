@@ -31,9 +31,10 @@ Reactivities is a social media application where users can create and share even
 - Docker
 - Entity Framework Core
 - Json Web Tokens (JWT)
+- MediatR
 - MobX
 - Postgres
-- React && MobX 
+- React
 - Semantic UI
 - SignalR
 - TypeScript
