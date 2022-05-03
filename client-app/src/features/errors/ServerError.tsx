@@ -9,6 +9,7 @@ export default observer(function ServerError() {
         <Container>
             <Header as='h1' content='Server Error' />
             <Header sub as='h5' color='red' content={commonStore.error?.message} />
+            <Header sub as='h5' color='red' content="If you are logged in, please sign out and sign back in." />
             {commonStore.error?.details &&
                 <Segment>
                     <Header as='h4' content='Stack trace' color='teal' />

@@ -15,35 +15,40 @@ export default observer(function HomePage() {
                     Reactivities
                 </Header>
                 {userStore.isLoggedIn ? (
-                    <>
+                    <div style={{ marginBottom: 12}}>
                         <Button as={Link} to='/activities' size='huge' inverted>
                             Go to Activities!
                         </Button>
-                    </>
+                    </div>
 
                 ) : (
-                        <>
-                        <Header as='h5' inverted>Login with <br/>email: bob@test.com <br/>pass: Pa$$w0rd</Header>
-                        
-                        <Button onClick={() => modalStore.openModal(<LoginForm />)} size='huge' inverted>
-                                Login!
-                        </Button>
-                        <Button onClick={() => modalStore.openModal(<RegisterForm />)} size='huge' inverted>
-                                Register!
-                        </Button>
-                        </>
+                        <div style={{ marginBottom: 12}}>
+                            <Button onClick={() => modalStore.openModal(<LoginForm />)} style={{ width: '150px'}} size='huge' inverted>
+                                    Login!
+                            </Button>
+                            <div style={{ marginBottom: 12}}/>
+                            <Button onClick={() => modalStore.openModal(<RegisterForm />)} style={{ width: '150px'}} size='huge' inverted>
+                                    Register!
+                            </Button>
+                        </div>
 
                 )}
-                <Header as='h3'>
-                    <Icon.Group 
-                        href='https://github.com/derraj/Reactivities'
-                        inverted
-                    >
-                        <Icon name='github' inverted size='large' link/>
-                    </Icon.Group>
-                </Header>
+                
+                <Button.Group>
+                    <Button color='facebook' href='https://github.com/derraj/Reactivities'>
+                        <Icon name='github' /> GitHub
+                    </Button>
+                    <Button color='linkedin' href='https://www.linkedin.com/in/jarred-mahinay-986b28210/'>
+                        <Icon name='linkedin' /> LinkedIn
+                    </Button>
+                    
+                </Button.Group>
+                
+
+
             
             </Container>
+            
         </Segment>
     )
 })
