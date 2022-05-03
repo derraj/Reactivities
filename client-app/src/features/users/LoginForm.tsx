@@ -20,6 +20,7 @@ export default observer(function LoginForm() {
             {({handleSubmit, isSubmitting, errors}) => (
                 <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
                     <Header as='h2' content='Login to Reactivites' color='teal' textAlign='center' />
+                    <Header as='h5' color='teal' textAlign='center'>Test Account <br/>email: bob@test.com <br/>pass: Pa$$w0rd</Header>
                     <MyTextInput name='email' placeholder='Email' />
                     <MyTextInput name='password' placeholder='Password' type='password' />
                     <ErrorMessage 
