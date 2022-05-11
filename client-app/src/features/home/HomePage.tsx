@@ -23,6 +23,7 @@ export default observer(function HomePage() {
 
                 ) : (
                         <div style={{ marginBottom: 12}}>
+                            <Header as='h5' inverted textAlign='center'>Test Account <br/>email: bob@test.com <br/>pass: Pa$$w0rd</Header>
                             <Button onClick={() => modalStore.openModal(<LoginForm />)} style={{ width: '150px'}} size='huge' inverted>
                                     Login!
                             </Button>
